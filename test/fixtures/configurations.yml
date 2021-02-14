@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  cpu_id: 1
+  gpu_id: 1
+  ram: 1
+
+two:
+  user_id: 1
+  cpu_id: 1
+  gpu_id: 1
+  ram: 1

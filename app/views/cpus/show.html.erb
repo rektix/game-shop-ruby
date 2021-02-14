@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @cpu.name %>
+</p>
+
+<p>
+  <strong>Cores:</strong>
+  <%= @cpu.cores %>
+</p>
+
+<%= link_to 'Edit', edit_cpu_path(@cpu) %> |
+<%= link_to 'Back', cpus_path %>

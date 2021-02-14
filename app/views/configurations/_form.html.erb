@@ -1,0 +1,37 @@
+<%= form_with(model: configuration) do |form| %>
+  <% if configuration.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(configuration.errors.count, "error") %> prohibited this configuration from being saved:</h2>
+
+      <ul>
+        <% configuration.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cpu_id %>
+    <%= form.number_field :cpu_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gpu_id %>
+    <%= form.number_field :gpu_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ram %>
+    <%= form.number_field :ram %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
