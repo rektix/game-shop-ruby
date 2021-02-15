@@ -1,6 +1,6 @@
 User.create!([
-  {email: "test@test.com", encrypted_password: "$2a$12$9GdlbBxJWvxNVwYzFXl2o.5KkrcXQxhb/5uBKTGtQCiiBnEagt7fe", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, admin: nil, computer_id: nil},
-  {email: "admin@admin.com", encrypted_password: "$2a$12$m.w4xXR7d3viBlrFOKYSjOBW6IoPxO66.EUVKP6BtHuUyjoQRCzsa", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, admin: true, computer_id: nil}
+  {email: "test@test.com", password: "testtest", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, admin: nil, computer_id: nil},
+  {email: "admin@admin.com", password: "admin123", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, admin: true, computer_id: nil}
 ])
 Gpu.create!([
   {name: "qwfp", ram: 6},
