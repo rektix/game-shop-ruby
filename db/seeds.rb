@@ -38,7 +38,7 @@ Article.create!([
   {id: 2, user_id: 2, title: "abcd", content: "qweifp", created_at: "2021-02-15 22:05:03", updated_at: "2021-02-15 22:05:03"}
 ])
 Computer.create!([
-  {id: 1, user_id: 1, cpu_id: 1, gpu_id: 1, ram: 8, created_at: "2021-02-14 18:58:22", updated_at: "2021-02-14 18:58:22"},
+  {id: 1, user_id: 3, cpu_id: 1, gpu_id: 1, ram: 8, created_at: "2021-02-14 18:58:22", updated_at: "2021-02-14 18:58:22"},
   {id: 3, user_id: 2, cpu_id: 2, gpu_id: 2, ram: 24, created_at: "2021-02-15 12:18:20", updated_at: "2021-02-15 12:18:20"}
 ])
 Order.create!([
