@@ -2,12 +2,12 @@
 
 <p>
   <strong>User:</strong>
-  <%= @comment.user_id %>
+  <%= @comment.user.email %>
 </p>
 
 <p>
   <strong>Game:</strong>
-  <%= @comment.game_id %>
+  <%= @comment.game.name %>
 </p>
 
 <p>
@@ -16,4 +16,4 @@
 </p>
 
 <%= link_to 'Edit', edit_comment_path(@comment) %> |
-<%= link_to 'Back', comments_path %>
+<%= link_to 'Back', games_path %>

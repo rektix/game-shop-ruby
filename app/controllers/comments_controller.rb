@@ -1,11 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: %i[ show edit update destroy ]
 
-  # GET /comments or /comments.json
-  def index
-    @comments = Comment.all
-  end
-
   # GET /comments/1 or /comments/1.json
   def show
   end
@@ -13,6 +8,7 @@ class CommentsController < ApplicationController
   # GET /comments/new
   def new
     @comment = Comment.new
+    @comment.game_id = params[:game_id]
   end
 
   # GET /comments/1/edit
@@ -22,6 +18,7 @@ class CommentsController < ApplicationController
   # POST /comments or /comments.json
   def create
     @comment = Comment.new(comment_params)
+    @comment.user_id = current_user.id if current_user
 
     respond_to do |format|
       if @comment.save
@@ -64,6 +61,6 @@ class CommentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def comment_params
-      params.require(:comment).permit(:user_id, :game_id, :content)
+      params.require(:comment).permit(:game_id, :user_id, :content)
     end
 end

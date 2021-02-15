@@ -1,5 +1,6 @@
 class CpusController < ApplicationController
   before_action :set_cpu, only: %i[ show edit update destroy ]
+  before_action :is_admin?
 
   # GET /cpus or /cpus.json
   def index

@@ -1,5 +1,6 @@
 class GpusController < ApplicationController
   before_action :set_gpu, only: %i[ show edit update destroy ]
+  before_action :is_admin?
 
   # GET /gpus or /gpus.json
   def index

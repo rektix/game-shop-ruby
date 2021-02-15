@@ -1,7 +1,45 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+User.create!([
+  {password: nil, email: "test@test.com", encrypted_password: "$2a$12$9GdlbBxJWvxNVwYzFXl2o.5KkrcXQxhb/5uBKTGtQCiiBnEagt7fe", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, admin: nil, computer_id: nil},
+  {password: nil, email: "admin@admin.com", encrypted_password: "$2a$12$m.w4xXR7d3viBlrFOKYSjOBW6IoPxO66.EUVKP6BtHuUyjoQRCzsa", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, admin: true, computer_id: nil}
+])
+Gpu.create!([
+  {name: "qwfp", ram: 6},
+  {name: "nvidia 1660s", ram: 6}
+])
+Comment.create!([
+  {user_id: 2, game_id: 2, content: "123213tarst"},
+  {user_id: 3, game_id: 2, content: "wqpqwfqwfp"},
+  {user_id: 3, game_id: 2, content: "qwpfpqwffwqp"},
+  {user_id: 2, game_id: 2, content: "aienrstniersaein"},
+  {user_id: 2, game_id: 2, content: "qwpffpqwqfwp"},
+  {user_id: 2, game_id: 2, content: "zxvczxcvxcv"},
+  {user_id: 2, game_id: 1, content: "zvcxcxvzxcvz"},
+  {user_id: 2, game_id: 1, content: "zxcvzxcv"}
+])
+Article.create!([
+  {user_id: 3, title: "qwfpqwf", content: "rsetoastr"},
+  {user_id: 2, title: "abcd", content: "qweifp"}
+])
+Genre.create!([
+  {name: "RPG"},
+  {name: "RTS"}
+])
+Cpu.create!([
+  {name: "abcd", cores: 8},
+  {name: "intel i5 8250u", cores: 4}
+])
+Computer.create!([
+  {user_id: 1, cpu_id: 1, gpu_id: 1, ram: 8},
+  {user_id: 2, cpu_id: 2, gpu_id: 2, ram: 24}
+])
+Game.create!([
+  {name: "abcd", description: "aorsieroieas aroeisoaier", price: 20, studio_id: 1, genre_id: 1},
+  {name: "Doom", description: "abcd", price: 20, studio_id: 1, genre_id: 2}
+])
+Order.create!([
+  {user_id: 3, game_id: 1}
+])
+Studio.create!([
+  {name: "test1"},
+  {name: "abcd"}
+])

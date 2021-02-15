@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Games</h1>
-
+<%= paginate @games %>
 <table>
   <thead>
     <tr>
@@ -19,17 +19,20 @@
       <tr>
         <td><%= game.name %></td>
         <td><%= game.description %></td>
-        <td><%= game.price %></td>
-        <td><%= game.studio_id %></td>
-        <td><%= game.genre_id %></td>
+        <td><%= game.price %>$</td>
+        <td><%= game.studio.name %></td>
+        <td><%= game.genre.name %></td>
         <td><%= link_to 'Show', game %></td>
-        <td><%= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if user_signed_in? and is_admin(current_user) %>
+          <td><%= link_to 'Edit', edit_game_path(game) %></td>
+          <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Game', new_game_path %>
+<% if user_signed_in? and is_admin(current_user) %>
+  <%= link_to 'New Game', new_game_path %>
+<% end %>

@@ -1,0 +1,32 @@
+<%= form_with(model: computer) do |form| %>
+  <% if computer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(computer.errors.count, "error") %> prohibited this computer from being saved:</h2>
+
+      <ul>
+        <% computer.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :cpu_id %>
+    <%= form.select(:cpu_id, options_for_select(Cpu.all.map { |p| ["#{p.name}", p.id] }), :prompt => "Select CPU") %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gpu_id %>
+    <%= form.select(:gpu_id, options_for_select(Gpu.all.map { |p| ["#{p.name}", p.id] }), :prompt => "Select GPU") %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ram %>
+    <%= form.number_field :ram %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

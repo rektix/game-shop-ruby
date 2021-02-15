@@ -1,16 +1,29 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @user.name %>
+  <strong>Email:</strong>
+  <%= @user.email %>
 </p>
+<p>
+  <strong>Orders:</strong>
+</p>
+<hr>
+<% @user.orders.each do |order| %> 
+  <%= order.game.name %>
+  <%= format_date(order.game.created_at) %>
+  <hr>
+<% end %>
 
 <p>
-  <strong>Password:</strong>
-  <%= @user.password %>
+  <strong>My computer:</strong>
 </p>
-<h3>First article: <%= @user.articles[0].title %></h3>
-<p><%= @user.articles[0].content %></p>
-
+<% if @user.computer %>
+  <%= render @user.computer %>
+  <hr>
+<% else %>
+  <%= link_to 'New Computer', new_computer_path %>
+  
+<% end %>
+<hr>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

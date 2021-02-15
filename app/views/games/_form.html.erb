@@ -28,12 +28,12 @@
 
   <div class="field">
     <%= form.label :studio_id %>
-    <%= form.number_field :studio_id %>
+    <%= form.select(:studio_id, options_for_select(Studio.all.map { |p| ["#{p.name}", p.id] }), :prompt => "Select studio") %>
   </div>
 
   <div class="field">
     <%= form.label :genre_id %>
-    <%= form.number_field :genre_id %>
+    <%= form.select(:genre_id, options_for_select(Genre.all.map { |p| ["#{p.name}", p.id] }), :prompt => "Select genre") %>
   </div>
 
   <div class="actions">

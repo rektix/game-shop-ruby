@@ -1,5 +1,6 @@
 class StudiosController < ApplicationController
   before_action :set_studio, only: %i[ show edit update destroy ]
+  before_action :is_admin?
 
   # GET /studios or /studios.json
   def index

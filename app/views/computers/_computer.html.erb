@@ -1,0 +1,16 @@
+<p>
+  <strong>Cpu:</strong>
+  <%= computer.cpu.name %> <%= computer.cpu.cores %> cores
+</p>
+
+<p>
+  <strong>Gpu:</strong>
+  <%= computer.gpu.name %> <%= computer.gpu.ram %>GB
+</p>
+
+<p>
+  <strong>Ram:</strong>
+  <%= computer.ram %>GB
+</p>
+
+<%= link_to 'Edit', edit_computer_path(computer) %>

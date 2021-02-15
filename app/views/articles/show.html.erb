@@ -2,12 +2,13 @@
 
 <p>
   <strong>User:</strong>
-  <%= @article.user_id %>
+  <%= @article.user.email %>
 </p>
 
 <p>
   <strong>Title:</strong>
   <%= @article.title %>
+  <%= format_date(@article.created_at) %>
 </p>
 
 <p>
@@ -15,5 +16,7 @@
   <%= @article.content %>
 </p>
 
+<% if user_signed_in? and (is_admin(current_user) or @article.user_id == current_user.id) %>
 <%= link_to 'Edit', edit_article_path(@article) %> |
+<% end %>
 <%= link_to 'Back', articles_path %>

@@ -1,0 +1,14 @@
+<div>
+    <p>
+      <strong>User:</strong>
+      <%= comment.user.email %>
+    </p>
+    <p>
+      <strong>Date:</strong>
+      <%= format_date(comment.created_at) %>
+    </p>
+    
+    <p>
+      <%= comment.content %>
+    </p>
+</div>

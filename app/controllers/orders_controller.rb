@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: %i[ show edit update destroy ]
+  before_action :is_admin?
 
   # GET /orders or /orders.json
   def index
@@ -13,6 +14,7 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     @order = Order.new
+    @order.game_id = params[:game_id]
   end
 
   # GET /orders/1/edit
@@ -22,6 +24,7 @@ class OrdersController < ApplicationController
   # POST /orders or /orders.json
   def create
     @order = Order.new(order_params)
+    @order.user_id = current_user.id if current_user
 
     respond_to do |format|
       if @order.save
