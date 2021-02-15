@@ -1,6 +1,6 @@
 User.create!([
-  {password: nil, email: "test@test.com", encrypted_password: "$2a$12$9GdlbBxJWvxNVwYzFXl2o.5KkrcXQxhb/5uBKTGtQCiiBnEagt7fe", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, admin: nil, computer_id: nil},
-  {password: nil, email: "admin@admin.com", encrypted_password: "$2a$12$m.w4xXR7d3viBlrFOKYSjOBW6IoPxO66.EUVKP6BtHuUyjoQRCzsa", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, admin: true, computer_id: nil}
+  {email: "test@test.com", encrypted_password: "$2a$12$9GdlbBxJWvxNVwYzFXl2o.5KkrcXQxhb/5uBKTGtQCiiBnEagt7fe", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, admin: nil, computer_id: nil},
+  {email: "admin@admin.com", encrypted_password: "$2a$12$m.w4xXR7d3viBlrFOKYSjOBW6IoPxO66.EUVKP6BtHuUyjoQRCzsa", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, admin: true, computer_id: nil}
 ])
 Gpu.create!([
   {name: "qwfp", ram: 6},
@@ -34,7 +34,8 @@ Computer.create!([
 ])
 Game.create!([
   {name: "abcd", description: "aorsieroieas aroeisoaier", price: 20, studio_id: 1, genre_id: 1},
-  {name: "Doom", description: "abcd", price: 20, studio_id: 1, genre_id: 2}
+  {name: "Doom", description: "abcd", price: 20, studio_id: 1, genre_id: 2},
+  {name: "qwfpqwfp", description: "arstrastrsta", price: 234, studio_id: 2, genre_id: 1}
 ])
 Order.create!([
   {user_id: 3, game_id: 1}
