@@ -1,6 +1,6 @@
 User.create!([
-  {id: 2, created_at: "2021-02-14 21:14:51", updated_at: "2021-02-15 15:38:03", email: "test@test.com", encrypted_password: "$2a$12$9GdlbBxJWvxNVwYzFXl2o.5KkrcXQxhb/5uBKTGtQCiiBnEagt7fe", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, admin: nil, computer_id: nil},
-  {id: 3, created_at: "2021-02-14 22:22:22", updated_at: "2021-02-15 14:11:57", email: "admin@admin.com", encrypted_password: "$2a$12$m.w4xXR7d3viBlrFOKYSjOBW6IoPxO66.EUVKP6BtHuUyjoQRCzsa", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, admin: true, computer_id: nil}
+  {id: 2, created_at: "2021-02-14 21:14:51", updated_at: "2021-02-15 15:38:03", email: "test@test.com", password: "testtest", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, admin: nil, computer_id: nil},
+  {id: 3, created_at: "2021-02-14 22:22:22", updated_at: "2021-02-15 14:11:57", email: "admin@admin.com", password: "admin123", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, admin: true, computer_id: nil}
 ])
 Gpu.create!([
   {id: 1, name: "qwfp", ram: 6, created_at: "2021-02-14 18:58:13", updated_at: "2021-02-14 18:58:13"},
